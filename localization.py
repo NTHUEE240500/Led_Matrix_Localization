@@ -11,8 +11,8 @@ class FiletypeErrorException(Exception):
         self.filename = filename
 
 
-def get_led_matrix_location(img, ):
-    '''get_led_matrix_location(img, [led_matrix_row, [led_matrix_col]]) -> label,
+def get_led_matrix_location(img):
+    '''get_led_matrix_location(img) -> label,
     location .\n
     @brief Get the location of the led matrix..\n
     . @param img input image..'''
