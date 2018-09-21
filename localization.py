@@ -210,9 +210,8 @@ if __name__ == "__main__":
 
     # get the file path
     if len(sys.argv) == 1:
-        filepath = './img/4_1.jpg'
-        # print("[ERROR] Please input the path to the file.")
-        # exit(1)
+        print("[ERROR] Please input the path to the file.")
+        exit(1)
     else:
         filepath = sys.argv[1]
 
