@@ -22,6 +22,8 @@ def get_led_matrix_location(img):
         print("[ERROR] type(img) is None")
         exit(1)
 
+    led_matrix_row = 8
+    led_matrix_col = 8
     # check that led_matrix_row is not smaller than led_matrix_col
     if led_matrix_row < led_matrix_col:
         print("[ERROR] led_matrix_row is smaller than led_matrix_col")
@@ -123,6 +125,9 @@ def get_led_matrix_location(img):
             # cv2.imshow('img_cnts_led', img_cnts_led)
             # print(led_prop)
 
+            if len(led_prop) == 0:
+                print("[ERROR] LED not found.")
+                return
             # find the uppest, lowest, leftest and rightest point
             extreme_point = []
             led_prop.sort(key=lambda led_prop: led_prop[1]/(led_prop[0] + 0.1))
@@ -152,8 +157,6 @@ def get_led_matrix_location(img):
 
             # detect the pattern
             pattern = []
-            led_matrix_row = 8
-            led_matrix_col = 8
             for i in range(0, led_matrix_col):
                 tmp = []
                 for j in range(0, led_matrix_row):
